@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperium Barber Club | Estilo & Tradição</title>
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#inicio" class="logo">
+                <i class="ph-fill ph-scissors"></i>
+                <span>IMPERIUM</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">A Barbearia</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#agendamento" class="nav-link">Agendar</a></li>
+                    <li><a href="#contato" class="nav-link">Localização</a></li>
+                </ul>
+                <a href="#agendamento" class="btn btn-primary nav-cta">Reservar Horário</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Seção Hero (Banner Principal) -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge">TRADIÇÃO & ALTA PRECISÃO</span>
+            <h1>O Corte Perfeito Define a Sua Presença.</h1>
+            <p>Uma experiência clássica renovada com técnicas modernas, toalha quente, navalha afiada e ambiente exclusivo.</p>
+            <div class="hero-buttons">
+                <a href="#agendamento" class="btn btn-primary">
+                    <i class="ph-bold ph-calendar-check"></i> Agendar Agora
+                </a>
+                <a href="#servicos" class="btn btn-outline">Ver Tabela de Preços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais / Sobre -->
+    <section class="features section" id="sobre">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="ph-duotone ph-razor"></i></div>
+                    <h3>Mestres Barbeiros</h3>
+                    <p>Profissionais especialistas em visagismo, degradê navalhado e barba terapia tradicional.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="ph-duotone ph-beer-stein"></i></div>
+                    <h3>Ambiente & Bar</h3>
+                    <p>Cerveja artesanal gelada, café expresso e som ambiente de qualidade enquanto você aguarda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="ph-duotone ph-sparkle"></i></div>
+                    <h3>Produtos Premium</h3>
+                    <p>Utilizamos apenas balms, óleos e pomadas de alta performance para cuidar dos fios e da pele.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section class="services section" id="servicos">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">NOSSO MENU</span>
+                <h2>Serviços & Valores</h2>
+                <p>Clique em um serviço para selecioná-lo automaticamente no agendamento.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Serviço 1 -->
+                <div class="service-card" data-service="Corte Clássico / Degradê - R$ 55">
+                    <div class="service-info">
+                        <div class="service-title-row">
+                            <h3>Corte Clássico / Degradê</h3>
+                            <span class="price">R$ 55</span>
+                        </div>
+                        <p>Corte na tesoura ou máquina com acabamento na navalha, lavagem e finalização com pomada.</p>
+                    </div>
+                    <button class="btn-select-service">Selecionar <i class="ph ph-arrow-right"></i></button>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="service-card" data-service="Barba Terapia (Toalha Quente) - R$ 45">
+                    <div class="service-info">
+                        <div class="service-title-row">
+                            <h3>Barba Terapia</h3>
+                            <span class="price">R$ 45</span>
+                        </div>
+                        <p>Modelagem completa com vaporizador de ozônio, toalha quente, massagem facial e óleo hidratante.</p>
+                    </div>
+                    <button class="btn-select-service">Selecionar <i class="ph ph-arrow-right"></i></button>
+                </div>
+
+                <!-- Serviço 3 (Destaque) -->
+                <div class="service-card featured-service" data-service="Combo Imperium (Cabelo + Barba) - R$ 90">
+                    <div class="popular-tag">MAIS PEDIDO</div>
+                    <div class="service-info">
+                        <div class="service-title-row">
+                            <h3>Combo Imperium (Cabelo + Barba)</h3>
+                            <span class="price">R$ 90</span>
+                        </div>
+                        <p>O pacote completo: corte de precisão + barba terapia com toalha quente e bebida cortesia.</p>
+                    </div>
+                    <button class="btn-select-service">Selecionar <i class="ph ph-arrow-right"></i></button>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="service-card" data-service="Pezinho & Sobrancelha - R$ 30">
+                    <div class="service-info">
+                        <div class="service-title-row">
+                            <h3>Acabamento & Sobrancelha</h3>
+                            <span class="price">R$ 30</span>
+                        </div>
+                        <p>Alinhamento dos contornos do cabelo na navalha e limpeza natural das sobrancelhas.</p>
+                    </div>
+                    <button class="btn-select-service">Selecionar <i class="ph ph-arrow-right"></i></button>
+                </div>
+
+                <!-- Serviço 5 -->
+                <div class="service-card" data-service="Selagem / Alinhamento Capilar - R$ 110">
+                    <div class="service-info">
+                        <div class="service-title-row">
+                            <h3>Selagem Capilar Masculina</h3>
+                            <span class="price">R$ 110</span>
+                        </div>
+                        <p>Redução de volume, controle do frizz e brilho intenso com produtos sem formol.</p>
+                    </div>
+                    <button class="btn-select-service">Selecionar <i class="ph ph-arrow-right"></i></button>
+                </div>
+
+                <!-- Serviço 6 -->
+                <div class="service-card" data-service="Corte Pai & Filho - R$ 95">
+                    <div class="service-info">
+                        <div class="service-title-row">
+                            <h3>Combo Pai & Filho</h3>
+                            <span class="price">R$ 95</span>
+                        </div>
+                        <p>Dois cortes completos (adulto + infantil até 12 anos) realizados em sequência ou simultaneamente.</p>
+                    </div>
+                    <button class="btn-select-service">Selecionar <i class="ph ph-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Agendamento -->
+    <section class="booking section" id="agendamento">
+        <div class="container">
+            <div class="booking-wrapper">
+                <div class="booking-info">
+                    <span class="subtitle">RESERVA ONLINE</span>
+                    <h2>Agende Seu Horário Sem Espera</h2>
+                    <p>Escolha o serviço desejado, o barbeiro de sua preferência, data e horário. Ao confirmar, enviaremos sua solicitação diretamente para o nosso WhatsApp para confirmação imediata.</p>
+                    
+                    <div class="hours-box">
+                        <h4><i class="ph-fill ph-clock"></i> Horário de Funcionamento</h4>
+                        <ul>
+                            <li><span>Segunda a Sexta:</span> <strong>09:00 às 20:00</strong></li>
+                            <li><span>Sábado:</span> <strong>08:30 às 18:00</strong></li>
+                            <li><span>Domingo:</span> <strong>Fechado</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <form class="booking-form" id="booking-form">
+                    <div class="form-group">
+                        <label for="client-name">Seu Nome Completo</label>
+                        <input type="text" id="client-name" placeholder="Ex: Carlos Eduardo" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service-select">Serviço Desejado</label>
+                            <select id="service-select" required>
+                                <option value="" disabled selected>Escolha um serviço...</option>
+                                <option value="Corte Clássico / Degradê - R$ 55">Corte Clássico / Degradê - R$ 55</option>
+                                <option value="Barba Terapia (Toalha Quente) - R$ 45">Barba Terapia - R$ 45</option>
+                                <option value="Combo Imperium (Cabelo + Barba) - R$ 90">Combo Imperium (Cabelo + Barba) - R$ 90</option>
+                                <option value="Pezinho & Sobrancelha - R$ 30">Acabamento & Sobrancelha - R$ 30</option>
+                                <option value="Selagem / Alinhamento Capilar - R$ 110">Selagem Capilar - R$ 110</option>
+                                <option value="Corte Pai & Filho - R$ 95">Combo Pai & Filho - R$ 95</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="barber-select">Profissional</label>
+                            <select id="barber-select" required>
+                                <option value="Sem preferência">Qualquer barbeiro disponível</option>
+                                <option value="Lucas (Master Barber)">Lucas (Master Barber)</option>
+                                <option value="Rafael (Especialista em Barba)">Rafael (Especialista em Barba)</option>
+                                <option value="Mateus (Degradê & Visagismo)">Mateus (Degradê & Visagismo)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-date">Data</label>
+                            <input type="date" id="booking-date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-time">Horário</label>
+                            <select id="booking-time" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:30">19:30</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="ph-bold ph-whatsapp-logo"></i> Confirmar Agendamento via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Final: Contato, Redes Sociais e Localização -->
+    <footer class="footer-contact" id="contato">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">ONDE ESTAMOS & CONTATO</span>
+                <h2>Venha Nos Visitar</h2>
+                <p>Acompanhe nosso trabalho nas redes sociais ou trace sua rota até a barbearia.</p>
+            </div>
+
+            <!-- Cards Chamativos de Instagram, WhatsApp e Endereço -->
+            <div class="social-location-cards">
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20a%20barbearia." target="_blank" class="contact-highlight-card whatsapp-card">
+                    <div class="card-icon">
+                        <i class="ph-fill ph-whatsapp-logo"></i>
+                    </div>
+                    <div class="card-text">
+                        <h3>WhatsApp Direto</h3>
+                        <p>(11) 99999-9999</p>
+                        <span class="card-link">Iniciar conversa <i class="ph-bold ph-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://instagram.com" target="_blank" class="contact-highlight-card instagram-card">
+                    <div class="card-icon">
+                        <i class="ph-fill ph-instagram-logo"></i>
+                    </div>
+                    <div class="card-text">
+                        <h3>Siga no Instagram</h3>
+                        <p>@imperiumbarberclub</p>
+                        <span class="card-link">Ver cortes e novidades <i class="ph-bold ph-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://maps.google.com/?q=Av.+Paulista,+1000,+São+Paulo" target="_blank" class="contact-highlight-card location-card">
+                    <div class="card-icon">
+                        <i class="ph-fill ph-map-pin"></i>
+                    </div>
+                    <div class="card-text">
+                        <h3>Nossa Localização</h3>
+                        <p>Av. Paulista, 1000 - Bela Vista, SP</p>
+                        <span class="card-link">Abrir no GPS <i class="ph-bold ph-arrow-up-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Mapa Incorporado -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098169135352!2d-46.65412628502216!3d-23.56491748468112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1690000000000!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="350" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="logo">
+                    <i class="ph-fill ph-scissors"></i>
+                    <span>IMPERIUM BARBER CLUB</span>
+                </div>
+                <p>&copy; 2026 Imperium Barber Club. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5511999999999?text=Olá!%20Vim%20pelo%20site%20da%20Imperium%20Barber." target="_blank" class="floating-whatsapp" aria-label="Falar no WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- JavaScript Externo -->
+    <script src="script.js"></script>
+</body>
+</html>

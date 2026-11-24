@@ -1,0 +1,710 @@
+/* =========================================
+   VARIÁVEIS & RESET
+========================================= */
+:root {
+    --bg-dark: #0d0d0f;
+    --bg-card: #16161a;
+    --bg-card-hover: #1e1e24;
+    --gold: #d4a359;
+    --gold-hover: #e5b76e;
+    --text-main: #f4f4f6;
+    --text-muted: #9ca3af;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --font-display: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+/* =========================================
+   BOTÕES & TÍTULOS
+========================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: #0d0d0f;
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 163, 89, 0.25);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.btn-block {
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 16px;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 55px;
+}
+
+.subtitle {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.section-header p {
+    color: var(--text-muted);
+}
+
+/* =========================================
+   CABEÇALHO / NAVBAR
+========================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: var(--transition);
+}
+
+.header.scrolled {
+    background-color: rgba(13, 13, 15, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.logo i {
+    color: var(--gold);
+    font-size: 1.7rem;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold);
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    padding-top: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(13,13,15,0.95) 0%, rgba(13,13,15,0.75) 55%, rgba(13,13,15,0.4) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(212, 163, 89, 0.15);
+    color: var(--gold);
+    border: 1px solid rgba(212, 163, 89, 0.4);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    margin-bottom: 35px;
+    max-width: 560px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* =========================================
+   DIFERENCIAIS (FEATURES)
+========================================= */
+.features {
+    background-color: #111114;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    padding: 35px 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 163, 89, 0.4);
+}
+
+.feature-icon {
+    width: 54px;
+    height: 54px;
+    background: rgba(212, 163, 89, 0.12);
+    color: var(--gold);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   SERVIÇOS
+========================================= */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.service-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--gold);
+    transform: translateY(-4px);
+}
+
+.featured-service {
+    border-color: rgba(212, 163, 89, 0.5);
+    background: linear-gradient(145deg, #1b1915, #16161a);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--gold);
+    color: #0d0d0f;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.service-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.service-title-row h3 {
+    font-size: 1.15rem;
+    color: #fff;
+}
+
+.price {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    white-space: nowrap;
+}
+
+.service-info p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 22px;
+}
+
+.btn-select-service {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition);
+}
+
+.service-card:hover .btn-select-service {
+    gap: 10px;
+}
+
+/* =========================================
+   AGENDAMENTO
+========================================= */
+.booking {
+    background-color: #111114;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.booking-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.booking-info h2 {
+    font-family: var(--font-display);
+    font-size: 2.3rem;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.booking-info > p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.hours-box {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.hours-box h4 {
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.hours-box ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.hours-box ul li:last-child {
+    border-bottom: none;
+}
+
+.hours-box ul li strong {
+    color: #fff;
+}
+
+.booking-form {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(212, 163, 89, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #e5e7eb;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px 16px;
+    background-color: #0d0d0f;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+/* =========================================
+   RODAPÉ CHAMATIVO: INSTAGRAM, WHATSAPP E MAPA
+========================================= */
+.footer-contact {
+    padding: 90px 0 40px;
+    background: radial-gradient(circle at top center, #1b1813 0%, #0d0d0f 65%);
+}
+
+.social-location-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 45px;
+}
+
+.contact-highlight-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 28px;
+    border-radius: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-highlight-card:hover {
+    transform: translateY(-6px);
+}
+
+.card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    flex-shrink: 0;
+}
+
+/* Estilo específico WhatsApp */
+.whatsapp-card:hover {
+    border-color: #25D366;
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.15);
+}
+.whatsapp-card .card-icon {
+    background: rgba(37, 211, 102, 0.15);
+    color: #25D366;
+}
+.whatsapp-card .card-link {
+    color: #25D366;
+}
+
+/* Estilo específico Instagram */
+.instagram-card:hover {
+    border-color: #e1306c;
+    box-shadow: 0 12px 30px rgba(225, 48, 108, 0.18);
+}
+.instagram-card .card-icon {
+    background: linear-gradient(45deg, rgba(240,148,51,0.2), rgba(225,48,108,0.2), rgba(188,24,136,0.2));
+    color: #f56040;
+}
+.instagram-card .card-link {
+    color: #f56040;
+}
+
+/* Estilo específico Localização */
+.location-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px rgba(212, 163, 89, 0.18);
+}
+.location-card .card-icon {
+    background: rgba(212, 163, 89, 0.15);
+    color: var(--gold);
+}
+.location-card .card-link {
+    color: var(--gold);
+}
+
+.card-text h3 {
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.card-text p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+}
+
+.card-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.map-container {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 163, 89, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+}
+
+.map-container iframe {
+    display: block;
+    filter: grayscale(25%) contrast(1.05);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Botão Flutuante WhatsApp */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: var(--transition);
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+@media (max-width: 968px) {
+    .booking-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #141417;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+        transition: 0.4s ease;
+        border-left: 1px solid var(--border-color);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-form {
+        padding: 25px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
